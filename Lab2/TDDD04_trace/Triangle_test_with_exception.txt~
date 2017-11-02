@@ -1,0 +1,48 @@
+Running Symbolic PathFinder ...
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.max_pc_length=2147483647
+symbolic.max_pc_msec=0
+symbolic.min_int=-1000000
+symbolic.max_int=1000000
+symbolic.min_double=-8.0
+symbolic.max_double=7.0
+JavaPathfinder v7.0 (rev 1217+) - (C) RIACS/NASA Ames Research Center
+
+
+====================================================== system under test
+triangle.Main.main("+vm.insn_factory.class=gov.nasa.jpf.symbc.SymbolicInstructionFactory","+listener=gov.nasa.jpf.symbc.SymbolicListener,gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener","+symbolic.method=triangle.Triangle.getType(sym#sym#sym)")
+
+====================================================== search started: 2015-04-21 11:14
+Enter the triangle side lengths: 
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+triangle.InvalidTriangleException
+	at triangle.Triangle.getType(Triangle.java:33)
+	at triangle.Main.main(Main.java:23)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at triangle.Triangle.getType(Triangle.java:33)
+	at triangle.Main.main(Main.java:23)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "triangle.InvalidTriangleException  at triangle.Tri..."
+
+====================================================== statistics
+elapsed time:       00:00:00
+states:             new=1,visited=0,backtracked=0,end=0
+search:             maxDepth=1,constraints=0
+choice generators:  thread=1 (signal=0,lock=1,sharedRef=0,threadApi=0,reschedule=0), data=0
+heap:               new=401,released=0,maxLive=0,gcCycles=0
+instructions:       3516
+max memory:         240MB
+loaded code:        classes=63,methods=1134
+
+====================================================== search finished: 2015-04-21 11:14
+
